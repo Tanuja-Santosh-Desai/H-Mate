@@ -2,43 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hostel Issue Portal - Home</title>
+  <title>Hostel Portal - Home</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #e6e6fa; /* Lavender background */
+      background: #fdf5e6; /* Soft beige background */
+      color: #333;
     }
 
     header {
-      background: #9370db; /* Medium purple header */
+      background: #2ecc71; /* Emerald green header */
       color: white;
-      padding: 15px;
+      padding: 20px;
       text-align: center;
     }
 
-    nav {
-      background: #6a5acd; /* Darker purple for contrast */
-      display: flex;
-      justify-content: center;
-      padding: 10px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
     .hero {
-      background: url() no-repeat center center;
+      background: url('hostel-background.jpg') no-repeat center center;
       background-size: cover;
-      height: 300px;
+      height: 250px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -51,85 +36,195 @@
     }
 
     .container {
-      padding: 30px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 50px;
+      flex-wrap: wrap;
     }
 
-    .card {
+    .login-option {
       background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 250px;
+      transition: transform 0.2s;
+    }
+
+    .login-option:hover {
+      transform: scale(1.05);
+    }
+
+    .login-option h2 {
+      color: #2ecc71;
+      margin-bottom: 15px;
+    }
+
+    .login-option i {
+      font-size: 50px;
+      color: #2ecc71;
+      margin-bottom: 15px;
+    }
+
+    .login-option button {
+      padding: 10px 20px;
+      background: #2ecc71;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .login-option button:hover {
+      background: #27ae60;
+    }
+
+    footer {
+      background: #2ecc71;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    /* Popup modal styles */
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 1; 
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      overflow: auto; 
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 300px;
       text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
-    .card h2 {
+    .modal-content h3 {
+      color: #2ecc71;
       margin-bottom: 15px;
-      color: #9370db; /* Accent headings */
     }
 
-    .card button {
-      padding: 10px 20px;
-      background: #9370db; /* Accent buttons */
+    .modal-content input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .modal-content button {
+      width: 100%;
+      padding: 10px;
+      background: #2ecc71;
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
     }
 
-    .card button:hover {
-      background: #6a5acd; /* Darker hover */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
-    footer {
-      background: #9370db;
+    .close:hover {
+      color: #000;
+    }
+    header {
+      background: #2ecc71; /* Emerald green */
       color: white;
-      text-align: center;
-      padding: 10px;
-      margin-top: 20px;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Hostel Issue Portal</h1>
-    <p>Welcome, Student! Report and track your hostel issues easily.</p>
+    <div class="logo">🏠 Hostel Portal</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Student Login</a>
+      <a href="#">Warden Login</a>
+      <a href="#">Help Desk</a>
+      <a href="#">About</a>
+    </nav>
   </header>
-
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Report Issue</a>
-    <a href="#">My Issues</a>
-    <a href="#">Help Desk</a>
-    <a href="#">Logout</a>
-  </nav>
 
   <div class="hero">
     <h1>Your Hostel, Your Voice</h1>
   </div>
 
   <div class="container">
-    <div class="card">
-      <h2>Report New Issue</h2>
-      <p>Submit complaints related to maintenance, facilities, or services.</p>
-      <button>Report Now</button>
+    <div class="login-option">
+      <i class="fas fa-user-graduate"></i>
+      <h2>Student Login</h2>
+      <p>Access your dashboard to report and track hostel issues.</p>
+      <button onclick="openModal('studentModal')">Login as Student</button>
     </div>
-    <div class="card">
-      <h2>Track My Issues</h2>
-      <p>View the status of your submitted issues and updates.</p>
-      <button>View Status</button>
+    <div class="login-option">
+      <i class="fas fa-user-shield"></i>
+      <h2>Warden Login</h2>
+      <p>Access your dashboard to manage and resolve student issues.</p>
+      <button onclick="openModal('wardenModal')">Login as Warden</button>
     </div>
-    <div class="card">
-      <h2>Help Desk</h2>
-      <p>Contact hostel administration for urgent support.</p>
-      <button>Contact</button>
+  </div>
+
+  <!-- Student Login Modal -->
+  <div id="studentModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('studentModal')">&times;</span>
+      <h3>Student Login</h3>
+      <input type="text" placeholder="Student ID" required>
+      <input type="password" placeholder="Password" required>
+      <button>Login</button>
+    </div>
+  </div>
+
+  <!-- Warden Login Modal -->
+  <div id="wardenModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('wardenModal')">&times;</span>
+      <h3>Warden Login</h3>
+      <input type="text" placeholder="Warden ID" required>
+      <input type="password" placeholder="Password" required>
+      <button>Login</button>
     </div>
   </div>
 
   <footer>
-    <p>&copy; 2025 Hostel Issue Portal | Designed for Students</p>
+    <p>&copy; 2025 Hostel Portal | Designed for Students & Wardens</p>
   </footer>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+    window.onclick = function(event) {
+      const studentModal = document.getElementById('studentModal');
+      const wardenModal = document.getElementById('wardenModal');
+      if (event.target == studentModal) studentModal.style.display = "none";
+      if (event.target == wardenModal) wardenModal.style.display = "none";
+    }
+  </script>
 </body>
 </html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Warden Dashboard - HostelHub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fdf5e6;
+      color: #333;
+    }
+
+    header {
+      background: #2ecc71;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 40px;
+      justify-content: center;
+    }
+
+    .section {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 400px;
+    }
+
+    .section h2 {
+      color: #2ecc71;
+      margin-bottom: 15px;
+    }
+
+    .section textarea,
+    .section input,
+    .section select,
+    .section button {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+
+    .section button {
+      background: #2ecc71;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .section button:hover {
+      background: #27ae60;
+    }
+
+    footer {
+      background: #2ecc71;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Warden Dashboard</h1>
+    <p>Manage hostel announcements and update complaints</p>
+  </header>
+
+  <div class="container">
+    <!-- Announcement Section -->
+    <div class="section">
+      <h2><i class="fas fa-bullhorn"></i> Post Announcement</h2>
+      <textarea rows="5" placeholder="Write your announcement here..."></textarea>
+      <button>Publish Announcement</button>
+    </div>
+
+    <!-- Complaint Update Section -->
+    <div class="section">
+      <h2><i class="fas fa-tools"></i> Update Complaint</h2>
+      <input type="text" placeholder="Complaint ID">
+      <select>
+        <option value="">Select Status</option>
+        <option value="in-progress">In Progress</option>
+        <option value="resolved">Resolved</option>
+        <option value="closed">Closed</option>
+      </select>
+      <textarea rows="3" placeholder="Add remarks or resolution notes..."></textarea>
+      <button>Update Complaint</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 HostelHub | Warden Portal</p>
+  </footer>
+</body>
+</html>
